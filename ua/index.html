@@ -23,8 +23,14 @@
 <meta name="twitter:description" content="Tap a color and watch it switch instantly. A zero latency interactive video ad by Flam.">
 <meta name="twitter:image" content="https://flamdesign.github.io/flam-links/ua/og-1200x630.jpg">
 
-<!-- Send real visitors straight to the Flick (crawlers do not run JS, so they stay and read the tags) -->
-<script>location.replace("https://flicks.flamapp.live/s/6af51c48b10716f58b9bb681");</script>
+<!-- Send real visitors straight to the Flick; link-preview crawlers stay here and read the tags above -->
+<script>
+(function () {
+  var ua = navigator.userAgent || "";
+  if (/bot|crawl|spider|facebookexternalhit|facebookcatalog|WhatsApp|LinkedIn|Slack|Twitter|Telegram|Discord|Embedly|Pinterest|Skype|Applebot|Iframely|preview/i.test(ua)) return;
+  location.replace("https://flicks.flamapp.live/s/6af51c48b10716f58b9bb681");
+})();
+</script>
 </head>
 <body style="font-family:sans-serif;text-align:center;padding:40px">
 <a href="https://flicks.flamapp.live/s/6af51c48b10716f58b9bb681">Open the Under Armour Flick</a>
