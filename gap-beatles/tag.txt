@@ -1,0 +1,23 @@
+Gap x The Beatles Flick
+Flick ID: 6a9eb4cd93e71f3ec92010f1_im75ys
+Host: native-ads.appless.workers.dev (production)
+
+
+1. Iframe tag (exactly as found on the source page)
+
+<iframe
+  src="https://native-ads.appless.workers.dev/6a9eb4cd93e71f3ec92010f1_im75ys"
+  width="100%" height="900"
+  frameborder="0" scrolling="no"
+  allow="autoplay; fullscreen; encrypted-media"
+  style="border:0;overflow:hidden;max-width:100%;">
+</iframe>
+
+
+2. Script tag (same Flick, standard Flicks ad tag format)
+
+<!doctype html>
+<meta charset=utf-8>
+<meta name=ad.orientation content=portrait,landscape>
+<script>var ExitApi=window.ExitApi||{exit:function(){}},clickTag="${CLICK_URL_UNESC}";</script>
+<script src=https://native-ads.appless.workers.dev/6a9eb4cd93e71f3ec92010f1_im75ys/ad.js></script>
