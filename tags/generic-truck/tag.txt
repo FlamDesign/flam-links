@@ -1,0 +1,6 @@
+<!doctype html>
+<meta charset=utf-8>
+<meta name=ad.orientation content=portrait,landscape>
+<style>html,body{margin:0;height:100%}</style>
+<script>var ExitApi=window.ExitApi||{exit:function(){}};var clickTag=(function(){try{var s=(location.search||"")+"&"+((location.hash||"").replace(/^#/,""));var m=/[?&]clickTag=([^&]*)/.exec(s);return m?decodeURIComponent(m[1]):"";}catch(e){return "";}})();</script>
+<script src=https://native-ads.appless.workers.dev/6a9bc07393e71f3ec9b12c81_g7ija2/ad.js></script>
