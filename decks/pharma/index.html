@@ -117,73 +117,110 @@ footer{position:fixed;bottom:0;left:0;right:0;display:flex;justify-content:space
  footer{background:linear-gradient(transparent,var(--bg) 40%)}
  .vert{display:none}
 }
+/* v2 */
+.slide.value{grid-template-columns:1fr}
+.full{max-width:1180px;width:100%;margin:0 auto}
+.value h2{font-size:clamp(28px,3.4vw,46px);margin:0 0 34px}
+.bench{display:grid;grid-template-columns:repeat(5,1fr);gap:22px;padding-bottom:30px;margin-bottom:30px;border-bottom:1px solid var(--line)}
+.bn{font-size:clamp(34px,3.6vw,52px);font-weight:500;letter-spacing:-1.4px;color:var(--ink)}
+.bn span{font-size:16px;letter-spacing:0;color:var(--acc);margin-left:8px;font-weight:500}
+.bd{font-size:13px;color:var(--mute);margin-top:6px;line-height:1.4}
+.vcards{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.vc{padding:24px 22px;border:1px solid var(--line);border-radius:18px;background:linear-gradient(160deg,rgba(255,240,232,.06),rgba(255,240,232,.015));min-height:150px;display:flex;flex-direction:column;justify-content:space-between;gap:24px}
+.vt{font-size:20px;font-weight:500;letter-spacing:-.3px}
+.vd{font-size:14px;line-height:1.45;color:var(--ink2)}
+.product h2{font-size:clamp(22px,2.3vw,32px);line-height:1.18;letter-spacing:-.7px;margin:16px 0 26px}
+.unlocks{list-style:none;border-top:1px solid var(--line);margin:10px 0 26px}
+.unlocks li{display:flex;gap:16px;align-items:baseline;padding:13px 0;border-bottom:1px solid var(--line);font-size:16.5px;font-weight:500;color:var(--ink)}
+.tech{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:10px}
+.tc{padding:14px;border:1px solid var(--line);border-radius:14px;background:var(--card)}
+.tt{font-size:14px;font-weight:500;color:var(--acc)}
+.td{font-size:12px;line-height:1.4;color:var(--mute);margin-top:4px}
+.tabs{display:flex;flex-wrap:wrap;justify-content:center;gap:8px}
+.tab{font-size:12.5px;padding:8px 13px;border-radius:999px;border:1px solid var(--line);color:var(--ink2)}
+.tab.on{background:linear-gradient(95deg,#f8e9e1,#f2c4b3);color:#1d1310;border-color:transparent;font-weight:500}
+.row{display:flex;gap:10px;flex-wrap:wrap;justify-content:center}
+.tiles .tile{min-height:120px}
+.intro .tname{font-size:20px}
+.cases{margin-top:30px}
+@media (max-width:900px){.bench{grid-template-columns:repeat(2,1fr)}.vcards,.tech{grid-template-columns:1fr}}
 </style></head>
 <body>
 <div class="bg"></div>
 <header><div class="brand"><span class="wordmark">Flam<sup>AI</sup></span><span class="sep"></span><span class="vert">Pharma</span></div>
-<div class="hright"><span class="count"><b id="cur">01</b> / 05</span><button id="fs" class="fs" type="button">⛶ Full screen</button></div></header>
+<div class="hright"><span class="count"><b id="cur">01</b> / 06</span><button id="fs" class="fs" type="button">⛶ Full screen</button></div></header>
 <main id="deck"><section class="slide intro" data-i="0">
 <div class="left">
-  <div class="pill"><span class="dot"></span>Flam for Pharma</div>
-  <h1 class="grad">Every patient and every doctor should get the story that fits them.</h1>
-  <p class="sub">Flam is the frontier AI research company defining interactive content, the format after video. Its own models and streaming infrastructure power four products on one platform. From the first ad to the hundredth refill.</p>
-  <div class="stats"><div class="stat"><div class="big">150+</div><div class="small">global enterprises, including Google, Samsung, Lego and Airbnb</div></div><div class="stat"><div class="big">$40M</div><div class="small">Series B, led by QED Investors</div></div></div>
+  <div class="pill"><span class="dot"></span>AI Interactive Content Platform</div>
+  <h1 class="grad">Every pharma communication should be interactive.</h1>
+  <p class="sub">Flam is the frontier AI research and product company defining the next modality beyond text, images &amp; videos. Flam&#x27;s proprietary AI models and streaming infrastructure power the creation and consumption of interactive content at scale for over 100 global enterprises, including Google, Samsung, Lego, and Airbnb.</p>
   
 </div>
-<div class="right"><div class="tiles"><button class="tile" data-go="1"><span class="orb flicks"></span><span class="tname">Flicks</span><span class="ttag">Interactive video ads</span><span class="arrow">→</span></button><button class="tile" data-go="2"><span class="orb airboards"></span><span class="tname">Airboards</span><span class="ttag">Interactive 3D on any screen</span><span class="arrow">→</span></button><button class="tile" data-go="3"><span class="orb visual"></span><span class="tname">AI Visual Agents</span><span class="ttag">Real-time, face to face</span><span class="arrow">→</span></button><button class="tile" data-go="4"><span class="orb voice"></span><span class="tname">AI Voice Agents</span><span class="ttag">60+ languages, by phone and app</span><span class="arrow">→</span></button></div></div>
-</section><section class="slide product" data-i="1">
-<div class="left">
-  <div class="plabel"><span class="orb flicks"></span><div><div class="pname">Flicks</div><div class="ptag">Interactive video ads</div></div></div>
-  <h2 class="grad">One video. Every patient&#x27;s story.</h2>
-  <ol class="points"><li><span class="n">01</span><div><div class="pt">One video, every indication</div><div class="pd">The viewer taps their condition and the patient story switches in the same frame.</div></div></li><li><span class="n">02</span><div><div class="pt">Know which message works</div><div class="pd">Every tap is a choice. See which story pulls with which audience while the flight is live.</div></div></li><li><span class="n">03</span><div><div class="pt">Reach patients earlier</div><div class="pd">Unbranded disease awareness Flicks let people explore symptoms before a brand is named.</div></div></li><li><span class="n">04</span><div><div class="pt">Drug pages that adapt</div><div class="pd">Product pages switch the benefit, setting or patient profile for each visitor.</div></div></li><li><span class="n">05</span><div><div class="pt">Built for review</div><div class="pd">Every variant is fixed and approved before it runs. Nothing changes live.</div></div></li></ol>
-  <div class="hood"><span>Under the hood</span>Patented compression puts every variant in one ad · switches in about 10 ms · ships as HTML5, VAST or SIMID tags</div>
+<div class="right"><div class="tiles"><button class="tile" data-go="2"><span class="orb flicks"></span><span class="tname">Flicks</span><span class="arrow">→</span></button><button class="tile" data-go="3"><span class="orb airboards"></span><span class="tname">Airboards</span><span class="arrow">→</span></button><button class="tile" data-go="4"><span class="orb visual"></span><span class="tname">AI Visual Agents</span><span class="arrow">→</span></button><button class="tile" data-go="5"><span class="orb voice"></span><span class="tname">AI Voice Agents</span><span class="arrow">→</span></button></div></div>
+</section><section class="slide value" data-i="1">
+<div class="full">
+  <h2 class="grad">Viewers choose, brands learn, both build connections</h2>
+  <div class="kicker">Performance benchmarks</div>
+  <div class="bench"><div class="bm"><div class="bn">18%<span>ITR</span></div><div class="bd">interactions over impressions</div></div><div class="bm"><div class="bn">28%<span>Lower CPA</span></div><div class="bd">high intent buyers land on website</div></div><div class="bm"><div class="bn">3x<span>Dwell time</span></div><div class="bd">against video ads</div></div><div class="bm"><div class="bn">4.2x<span>ROAS</span></div><div class="bd">compared to display banner ads</div></div><div class="bm"><div class="bn">70%<span>Recall</span></div><div class="bd">higher brand recall than passive ads</div></div></div>
+  <div class="vcards"><div class="vc"><div class="vt">Every tap is an insight</div><div class="vd">Real performance data, no guesswork anymore</div></div><div class="vc"><div class="vt">Retarget with precision</div><div class="vd">Choice, Rate, Depth and Speed of interactions build real-time intent signal</div></div><div class="vc"><div class="vt">Distribute anywhere</div><div class="vd">Distribute Flicks across any HTML5/VAST compatible surface seamlessly</div></div></div>
 </div>
-<div class="right"><div class="frame square"><iframe data-src="https://flicks.flamapp.live/eal6b2/?embed=1" title="Live Flick" allow="autoplay; fullscreen" loading="lazy"></iframe>
-<div class="live-tag"><span class="dot"></span>Live</div></div>
-<div class="demo-cap">CVS Health · tap to switch the kind of care</div>
-<a class="try" href="https://flicks.flamapp.live/eal6b2/" target="_blank" rel="noopener">Open full screen ↗</a></div>
 </section><section class="slide product" data-i="2">
 <div class="left">
-  <div class="plabel"><span class="orb airboards"></span><div><div class="pname">Airboards</div><div class="ptag">Interactive 3D on any screen</div></div></div>
-  <h2 class="grad">Make the science something people can explore.</h2>
-  <ol class="points"><li><span class="n">01</span><div><div class="pt">Mechanism of action in 3D</div><div class="pd">At the congress booth, then on each doctor&#x27;s phone after they leave.</div></div></li><li><span class="n">02</span><div><div class="pt">Device training</div><div class="pd">Patients and nurses explore an inhaler, pen or device step by step.</div></div></li><li><span class="n">03</span><div><div class="pt">Pharmacy and clinic</div><div class="pd">Consumer health brands turn the shelf and the waiting room into a moment to explore.</div></div></li><li><span class="n">04</span><div><div class="pt">Outdoor and print that open up</div><div class="pd">One scan turns a billboard or a print ad into interactive 3D.</div></div></li><li><span class="n">05</span><div><div class="pt">Every interaction measured</div><div class="pd">No app to download. It opens instantly on the viewer&#x27;s own device.</div></div></li></ol>
-  <div class="hood"><span>Under the hood</span>Touch, voice and haptics · runs in the browser · live in about three weeks from assets</div>
+  <div class="plabel"><span class="orb flicks"></span><div class="pname">Flicks</div></div>
+  <h2 class="grad">Zero-latency interactive videos: viewers tap and explore variants inside the same frame</h2>
+  <div class="kicker">What it unlocks for pharma</div>
+  <ol class="unlocks"><li><span class="n">01</span>Switch the patient, condition or benefit inside one ad</li><li><span class="n">02</span>Learn which message works, by audience</li><li><span class="n">03</span>Unbranded awareness that reaches patients earlier</li></ol>
+  <div class="kicker">Under the hood</div>
+  <div class="tech"><div class="tc"><div class="tt">Compression</div><div class="td">Variants are compressed in a 8-10x smaller file size ensuring the content always loads</div></div><div class="tc"><div class="tt">Compatibility</div><div class="td">Compatible across any HTML placement, no impact on page load times</div></div><div class="tc"><div class="tt">Creation</div><div class="td">Brand-safe content in minutes from a text prompt and human guidance</div></div></div>
+</div>
+<div class="right"><div class="tabs"><button class="tab on" data-src="https://flicks.flamapp.live/s/6afcb1d2067c677a06bc159e">GSK · Asthma</button><button class="tab" data-src="https://flicks.flamapp.live/ohhg36/?embed=1">Madrigal · Type 2 diabetes</button><button class="tab" data-src="https://flicks.flamapp.live/l22tw9/?embed=1">American Diabetes Association</button></div>
+<div class="frame square"><iframe class="flick" data-src="https://flicks.flamapp.live/s/6afcb1d2067c677a06bc159e" title="Live Flick" allow="autoplay; fullscreen"></iframe><div class="live-tag"><span class="dot"></span>Live</div></div>
+<div class="demo-cap">Tap to switch the patient or the story</div>
+<a class="try flick-open" href="https://flicks.flamapp.live/s/6afcb1d2067c677a06bc159e" target="_blank" rel="noopener">Open full screen ↗</a></div>
+</section><section class="slide product" data-i="3">
+<div class="left">
+  <div class="plabel"><span class="orb airboards"></span><div class="pname">Airboards</div></div>
+  <h2 class="grad">Interactive 3D with touch, voice and haptics, delivered instantly on the user&#x27;s device</h2>
+  <div class="kicker">What it unlocks for pharma</div>
+  <ol class="unlocks"><li><span class="n">01</span>Mechanism of action in 3D at congresses</li><li><span class="n">02</span>Device training for patients and nurses</li><li><span class="n">03</span>Pharmacy, clinic and OOH moments that open with one scan</li></ol>
+  <div class="kicker">Under the hood</div>
+  <div class="tech"><div class="tc"><div class="tt">Instant</div><div class="td">Opens in the browser, no app download</div></div><div class="tc"><div class="tt">Touch, voice and haptics</div><div class="td">High-fidelity 3D the viewer can explore</div></div><div class="tc"><div class="tt">Any channel</div><div class="td">Digital, social, CTV, retail, packaging, print and OOH</div></div></div>
 </div>
 <div class="right"><div class="frame qr-card"><div class="qr"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 198 198" class="segno"><g transform="scale(6)"><path fill="#f6e3da" d="M0 0h33v33h-33z"/><path class="qrline" stroke="#110d0c" d="M2 2.5h7m4 0h2m1 0h2m3 0h1m2 0h7m-29 1h1m5 0h1m1 0h2m2 0h1m3 0h1m1 0h1m1 0h1m1 0h1m5 0h1m-29 1h1m1 0h3m1 0h1m1 0h1m2 0h1m1 0h2m7 0h1m1 0h3m1 0h1m-29 1h1m1 0h3m1 0h1m8 0h3m1 0h1m2 0h1m1 0h3m1 0h1m-29 1h1m1 0h3m1 0h1m3 0h4m1 0h1m1 0h1m1 0h1m2 0h1m1 0h3m1 0h1m-29 1h1m5 0h1m2 0h8m1 0h2m2 0h1m5 0h1m-29 1h7m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h7m-14 1h1m1 0h1m1 0h1m-19 1h3m1 0h2m7 0h1m2 0h1m8 0h2m-28 1h3m1 0h2m2 0h1m1 0h4m2 0h2m1 0h8m1 0h1m-27 1h2m1 0h2m1 0h1m1 0h4m2 0h3m3 0h1m1 0h1m2 0h1m-27 1h4m2 0h1m1 0h1m2 0h1m1 0h1m1 0h1m2 0h2m2 0h2m3 0h1m-27 1h1m1 0h4m1 0h1m1 0h3m3 0h1m1 0h1m1 0h1m1 0h1m2 0h3m-29 1h4m3 0h1m1 0h2m3 0h2m1 0h1m1 0h2m1 0h2m1 0h2m1 0h1m-29 1h1m2 0h5m1 0h1m3 0h2m3 0h8m2 0h1m-28 1h5m13 0h1m4 0h2m1 0h1m-27 1h1m1 0h1m1 0h4m1 0h2m1 0h1m1 0h1m2 0h1m4 0h3m-19 1h3m1 0h1m2 0h1m1 0h1m1 0h1m2 0h1m3 0h1m-26 1h1m1 0h1m1 0h1m1 0h1m2 0h1m1 0h3m1 0h2m1 0h1m1 0h1m1 0h5m-24 1h2m3 0h2m1 0h4m1 0h4m1 0h2m1 0h3m-26 1h1m1 0h2m1 0h3m2 0h1m1 0h1m3 0h2m1 0h7m1 0h1m-21 1h1m2 0h3m2 0h1m1 0h1m1 0h1m3 0h2m2 0h1m-29 1h7m2 0h4m3 0h1m2 0h2m1 0h1m1 0h1m1 0h2m-28 1h1m5 0h1m1 0h1m2 0h1m1 0h1m2 0h1m1 0h1m1 0h1m3 0h1m3 0h1m-29 1h1m1 0h3m1 0h1m3 0h3m2 0h1m1 0h1m2 0h8m-28 1h1m1 0h3m1 0h1m1 0h1m2 0h1m2 0h3m1 0h2m4 0h2m2 0h1m-29 1h1m1 0h3m1 0h1m1 0h2m8 0h1m1 0h1m2 0h1m2 0h1m1 0h1m-29 1h1m5 0h1m1 0h2m1 0h3m1 0h2m3 0h1m1 0h1m1 0h2m1 0h1m-28 1h7m4 0h1m6 0h6m3 0h1"/></g></svg>
 </div>
-<div class="qr-note">Point your phone camera at the code. The 3D opens in your browser, no app needed.</div>
-<div class="live-tag"><span class="dot"></span>Live</div></div>
+<div class="qr-note">Point your phone camera at the code. It opens in your browser, no app needed.</div><div class="live-tag"><span class="dot"></span>Live</div></div>
 <div class="demo-cap">Novartis · scan with your phone camera</div>
-<a class="try" href="https://c.flamapp.com/e?o=j45sue" target="_blank" rel="noopener">Open on this device ↗</a><a class="try ghost" href="https://c.flamapp.com/e?o=n9umx1" target="_blank" rel="noopener">Also try: a medical device walkthrough ↗</a></div>
-</section><section class="slide product" data-i="3">
-<div class="left">
-  <div class="plabel"><span class="orb visual"></span><div><div class="pname">AI Visual Agents</div><div class="ptag">Real-time, face to face</div></div></div>
-  <h2 class="grad">A knowledgeable face for every doctor and patient.</h2>
-  <ol class="points"><li><span class="n">01</span><div><div class="pt">A liaison for doctors reps cannot reach</div><div class="pd">Label, trial data, coverage and samples at any hour, then a rep or medical liaison meeting booked.</div></div></li><li><span class="n">02</span><div><div class="pt">A guide for new patients</div><div class="pd">First dose, device use, the copay card and enrolling in the support program.</div></div></li><li><span class="n">03</span><div><div class="pt">A host for every drug website</div><div class="pd">Answers from the label in place of search boxes and FAQ pages.</div></div></li><li><span class="n">04</span><div><div class="pt">Approved knowledge only</div><div class="pd">Answers come from the brand&#x27;s own approved content, with guardrails that keep it on topic.</div></div></li><li><span class="n">05</span><div><div class="pt">Works inside your systems</div><div class="pd">Books meetings, files requests and updates Salesforce, HubSpot or Zendesk in the conversation.</div></div></li></ol>
-  <div class="hood"><span>Under the hood</span>Lifelike presenter from a single photo · replies in under 800 ms · 98% answer faithfulness</div>
-</div>
-<div class="right"><div class="frame wide agent"><iframe data-agent="https://flamflix-demo.vercel.app/?avatar_id=ecfb2ddb-80ec-4526-88a7-299a4738957c&amp;agent_id=agent_5801kpzkcb1nfmt9tx0qxpsg6t1x&amp;name=Alex" title="Live AI Visual Agent" allow="microphone; camera; autoplay; fullscreen"></iframe>
-<button class="agent-start" type="button"><span class="mic">●</span> Start the conversation</button>
-<div class="live-tag"><span class="dot"></span>Live</div></div>
-<div class="demo-cap">Talk to Alex · allow your microphone</div>
-<a class="try" href="https://flamflix-demo.vercel.app/?avatar_id=ecfb2ddb-80ec-4526-88a7-299a4738957c&amp;agent_id=agent_5801kpzkcb1nfmt9tx0qxpsg6t1x&amp;name=Alex" target="_blank" rel="noopener">Open in a new tab ↗</a></div>
+<div class="row"><a class="try" href="https://c.flamapp.com/e?o=j45sue" target="_blank" rel="noopener">Open on this device ↗</a>
+<a class="try ghost" href="https://c.flamapp.com/e?o=n9umx1" target="_blank" rel="noopener">Also try: medical device walkthrough ↗</a></div></div>
 </section><section class="slide product" data-i="4">
 <div class="left">
-  <div class="plabel"><span class="orb voice"></span><div><div class="pname">AI Voice Agents</div><div class="ptag">60+ languages, by phone and app</div></div></div>
-  <h2 class="grad">Support every patient by phone, in their own language.</h2>
-  <ol class="points"><li><span class="n">01</span><div><div class="pt">First fill and refill calls</div><div class="pd">Calls at the points patients tend to drop off, and passes concerns to a nurse or pharmacist.</div></div></li><li><span class="n">02</span><div><div class="pt">A support line that never closes</div><div class="pd">Enrollment, copay and access questions answered at any hour, with clinical questions handed to a person.</div></div></li><li><span class="n">03</span><div><div class="pt">Every patient&#x27;s language</div><div class="pd">60+ languages, so patients with limited English get the same support.</div></div></li><li><span class="n">04</span><div><div class="pt">A line for practice staff</div><div class="pd">Sample requests and coverage questions from doctors&#x27; offices, so reps spend time on clinical conversations.</div></div></li><li><span class="n">05</span><div><div class="pt">Fits the phone system you have</div><div class="pd">Audio in the exact format your telephony and IVR expect.</div></div></li></ol>
-  <div class="hood"><span>Under the hood</span>Voice built from 30 seconds of audio · audio starts before the sentence ends · one voice across every language</div>
+  <div class="plabel"><span class="orb visual"></span><div class="pname">AI Visual Agents</div></div>
+  <h2 class="grad">Photo-real avatars that converse in real time and complete actions with context</h2>
+  <div class="kicker">What it unlocks for pharma</div>
+  <ol class="unlocks"><li><span class="n">01</span>A liaison for HCPs reps cannot reach</li><li><span class="n">02</span>Patient onboarding: first dose, device, copay card</li><li><span class="n">03</span>A drug website host that answers from approved content</li></ol>
+  <div class="kicker">Under the hood</div>
+  <div class="tech"><div class="tc"><div class="tt">One photo</div><div class="td">Lifelike agent from a single image, exact lip-sync</div></div><div class="tc"><div class="tt">Under 800ms</div><div class="td">Real-time replies, 98% answer faithfulness</div></div><div class="tc"><div class="tt">Takes action</div><div class="td">Connects to Salesforce, HubSpot, Zendesk and calendars</div></div></div>
+</div>
+<div class="right"><div class="frame wide agent"><iframe data-agent="https://flamflix-demo.vercel.app/?avatar_id=ecfb2ddb-80ec-4526-88a7-299a4738957c&amp;agent_id=agent_5801kpzkcb1nfmt9tx0qxpsg6t1x&amp;name=Alex" title="Live AI Visual Agent" allow="microphone; camera; autoplay; fullscreen"></iframe>
+<button class="agent-start" type="button"><span class="mic">●</span> Start the conversation</button><div class="live-tag"><span class="dot"></span>Live</div></div>
+<div class="demo-cap">Talk to Alex · allow your microphone</div>
+<a class="try" href="https://flamflix-demo.vercel.app/?avatar_id=ecfb2ddb-80ec-4526-88a7-299a4738957c&amp;agent_id=agent_5801kpzkcb1nfmt9tx0qxpsg6t1x&amp;name=Alex" target="_blank" rel="noopener">Open in a new tab ↗</a></div>
+</section><section class="slide product" data-i="5">
+<div class="left">
+  <div class="plabel"><span class="orb voice"></span><div class="pname">AI Voice Agents</div></div>
+  <h2 class="grad">Natural phone and voice agents that answer and call in 60+ languages</h2>
+  <div class="kicker">What it unlocks for pharma</div>
+  <ol class="unlocks"><li><span class="n">01</span>First fill and refill calls</li><li><span class="n">02</span>A patient support line that never closes</li><li><span class="n">03</span>The same support in every patient&#x27;s language</li></ol>
+  <div class="kicker">Under the hood</div>
+  <div class="tech"><div class="tc"><div class="tt">60+ languages</div><div class="td">Switch language mid-conversation</div></div><div class="tc"><div class="tt">Under 300ms</div><div class="td">Natural, real-time speech</div></div><div class="tc"><div class="tt">30 seconds</div><div class="td">Of audio to clone a voice across every language</div></div></div>
 </div>
 <div class="right"><a class="frame voice-card" href="https://flamapp.ai/models/finesse" target="_blank" rel="noopener">
-<div class="wave"><i style="--h:30"></i><i style="--h:55"></i><i style="--h:80"></i><i style="--h:45"></i><i style="--h:95"></i><i style="--h:60"></i><i style="--h:35"></i><i style="--h:70"></i><i style="--h:90"></i><i style="--h:50"></i><i style="--h:25"></i><i style="--h:65"></i><i style="--h:85"></i><i style="--h:40"></i><i style="--h:75"></i><i style="--h:55"></i><i style="--h:30"></i><i style="--h:60"></i></div>
-<div class="voice-title">Listen in 60+ languages</div>
-<div class="chips"><span class="chip">English</span><span class="chip">Español</span><span class="chip">हिन्दी</span><span class="chip">العربية</span><span class="chip">日本語</span><span class="chip">Français</span><span class="chip">Deutsch</span><span class="chip">Português</span><span class="chip">中文</span><span class="chip">한국어</span><span class="chip">Bahasa</span><span class="chip">தமிழ்</span><span class="chip more">+48</span></div>
-<div class="play">▶ Play samples</div>
-<div class="live-tag"><span class="dot"></span>Live</div></a>
-<div class="demo-cap">Hear Flam&#x27;s voice model in 60+ languages</div>
+<div class="wave"><i style="--h:30"></i><i style="--h:55"></i><i style="--h:80"></i><i style="--h:45"></i><i style="--h:95"></i><i style="--h:60"></i><i style="--h:35"></i><i style="--h:70"></i><i style="--h:90"></i><i style="--h:50"></i><i style="--h:25"></i><i style="--h:65"></i><i style="--h:85"></i><i style="--h:40"></i><i style="--h:75"></i><i style="--h:55"></i><i style="--h:30"></i><i style="--h:60"></i></div><div class="voice-title">Listen in 60+ languages</div>
+<div class="chips"><span class="chip">English</span><span class="chip">Español</span><span class="chip">हिन्दी</span><span class="chip">العربية</span><span class="chip">日本語</span><span class="chip">Français</span><span class="chip">Deutsch</span><span class="chip">Português</span><span class="chip">中文</span><span class="chip">한국어</span><span class="chip">Bahasa</span><span class="chip">தமிழ்</span><span class="chip more">+48</span></div><div class="play">▶ Play samples</div><div class="live-tag"><span class="dot"></span>Live</div></a>
+<div class="demo-cap">Hear Flam's voice model across languages</div>
 <a class="try" href="https://flamapp.ai/models/finesse" target="_blank" rel="noopener">Open the voice demo ↗</a></div>
 </section></main>
-<footer><div class="dots"><button class="d" data-go="0" aria-label="Slide 1"></button><button class="d" data-go="1" aria-label="Slide 2"></button><button class="d" data-go="2" aria-label="Slide 3"></button><button class="d" data-go="3" aria-label="Slide 4"></button><button class="d" data-go="4" aria-label="Slide 5"></button></div><div class="nav"><button id="prev" class="navb" aria-label="Previous">‹</button><button id="next" class="navb primary" aria-label="Next">›</button></div></footer>
+<footer><div class="dots"><button class="d" data-go="0" aria-label="Slide 1"></button><button class="d" data-go="1" aria-label="Slide 2"></button><button class="d" data-go="2" aria-label="Slide 3"></button><button class="d" data-go="3" aria-label="Slide 4"></button><button class="d" data-go="4" aria-label="Slide 5"></button><button class="d" data-go="5" aria-label="Slide 6"></button></div><div class="nav"><button id="prev" class="navb" aria-label="Previous">‹</button><button id="next" class="navb primary" aria-label="Next">›</button></div></footer>
 <script>(function(){
   var slides=[].slice.call(document.querySelectorAll('.slide'));
   var dots=[].slice.call(document.querySelectorAll('.d'));
@@ -213,6 +250,12 @@ footer{position:fixed;bottom:0;left:0;right:0;display:flex;justify-content:space
     var fr=b.parentNode, f=fr.querySelector('iframe');
     if(!f.src){f.src=f.getAttribute('data-agent')}
     fr.classList.add('started');
+  })});
+  document.querySelectorAll('.tabs').forEach(function(t){t.addEventListener('click',function(ev){
+    var b=ev.target.closest('.tab'); if(!b)return;
+    t.querySelectorAll('.tab').forEach(function(x){x.classList.toggle('on',x===b)});
+    var r=t.parentNode, f=r.querySelector('iframe.flick'), a=r.querySelector('.flick-open');
+    f.setAttribute('data-src',b.getAttribute('data-src')); f.src=b.getAttribute('data-src'); if(a)a.href=b.getAttribute('data-src');
   })});
   document.getElementById('fs').onclick=function(){
     try{if(!document.fullscreenElement){document.documentElement.requestFullscreen()}else{document.exitFullscreen()}}catch(e){}

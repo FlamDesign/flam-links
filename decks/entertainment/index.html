@@ -117,73 +117,110 @@ footer{position:fixed;bottom:0;left:0;right:0;display:flex;justify-content:space
  footer{background:linear-gradient(transparent,var(--bg) 40%)}
  .vert{display:none}
 }
+/* v2 */
+.slide.value{grid-template-columns:1fr}
+.full{max-width:1180px;width:100%;margin:0 auto}
+.value h2{font-size:clamp(28px,3.4vw,46px);margin:0 0 34px}
+.bench{display:grid;grid-template-columns:repeat(5,1fr);gap:22px;padding-bottom:30px;margin-bottom:30px;border-bottom:1px solid var(--line)}
+.bn{font-size:clamp(34px,3.6vw,52px);font-weight:500;letter-spacing:-1.4px;color:var(--ink)}
+.bn span{font-size:16px;letter-spacing:0;color:var(--acc);margin-left:8px;font-weight:500}
+.bd{font-size:13px;color:var(--mute);margin-top:6px;line-height:1.4}
+.vcards{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.vc{padding:24px 22px;border:1px solid var(--line);border-radius:18px;background:linear-gradient(160deg,rgba(255,240,232,.06),rgba(255,240,232,.015));min-height:150px;display:flex;flex-direction:column;justify-content:space-between;gap:24px}
+.vt{font-size:20px;font-weight:500;letter-spacing:-.3px}
+.vd{font-size:14px;line-height:1.45;color:var(--ink2)}
+.product h2{font-size:clamp(22px,2.3vw,32px);line-height:1.18;letter-spacing:-.7px;margin:16px 0 26px}
+.unlocks{list-style:none;border-top:1px solid var(--line);margin:10px 0 26px}
+.unlocks li{display:flex;gap:16px;align-items:baseline;padding:13px 0;border-bottom:1px solid var(--line);font-size:16.5px;font-weight:500;color:var(--ink)}
+.tech{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:10px}
+.tc{padding:14px;border:1px solid var(--line);border-radius:14px;background:var(--card)}
+.tt{font-size:14px;font-weight:500;color:var(--acc)}
+.td{font-size:12px;line-height:1.4;color:var(--mute);margin-top:4px}
+.tabs{display:flex;flex-wrap:wrap;justify-content:center;gap:8px}
+.tab{font-size:12.5px;padding:8px 13px;border-radius:999px;border:1px solid var(--line);color:var(--ink2)}
+.tab.on{background:linear-gradient(95deg,#f8e9e1,#f2c4b3);color:#1d1310;border-color:transparent;font-weight:500}
+.row{display:flex;gap:10px;flex-wrap:wrap;justify-content:center}
+.tiles .tile{min-height:120px}
+.intro .tname{font-size:20px}
+.cases{margin-top:30px}
+@media (max-width:900px){.bench{grid-template-columns:repeat(2,1fr)}.vcards,.tech{grid-template-columns:1fr}}
 </style></head>
 <body>
 <div class="bg"></div>
 <header><div class="brand"><span class="wordmark">Flam<sup>AI</sup></span><span class="sep"></span><span class="vert">Entertainment</span></div>
-<div class="hright"><span class="count"><b id="cur">01</b> / 05</span><button id="fs" class="fs" type="button">⛶ Full screen</button></div></header>
+<div class="hright"><span class="count"><b id="cur">01</b> / 06</span><button id="fs" class="fs" type="button">⛶ Full screen</button></div></header>
 <main id="deck"><section class="slide intro" data-i="0">
 <div class="left">
-  <div class="pill"><span class="dot"></span>Flam for Entertainment</div>
-  <h1 class="grad">Every fan should get to choose their way into the story.</h1>
-  <p class="sub">Flam is the frontier AI research company defining interactive content, the format after video. Its own models and streaming infrastructure power four products on one platform. From the first trailer to opening night and every day after.</p>
-  <div class="stats"><div class="stat"><div class="big">150+</div><div class="small">global enterprises, including Google, Samsung, Lego and Airbnb</div></div><div class="stat"><div class="big">$40M</div><div class="small">Series B, led by QED Investors</div></div></div>
-  <div class="cases"><div class="kicker">Proven in entertainment</div><div class="case-row"><div class="case"><div class="cbrand">Lionsgate</div><div class="big">36K</div><div class="small">clicked to book tickets from a 3D trailer for Now You See Me: Now You Don&#x27;t</div></div><div class="case"><div class="cbrand">Netflix</div><div class="big">45%</div><div class="small">of viewers went on to visit Netflix from a trailer insert</div></div><div class="case"><div class="cbrand">Wargaming</div><div class="big">63%</div><div class="small">lift in paid media ROI for World of Warships</div></div></div></div>
+  <div class="pill"><span class="dot"></span>AI Interactive Content Platform</div>
+  <h1 class="grad">Every entertainment campaign should be interactive.</h1>
+  <p class="sub">Flam is the frontier AI research and product company defining the next modality beyond text, images &amp; videos. Flam&#x27;s proprietary AI models and streaming infrastructure power the creation and consumption of interactive content at scale for over 100 global enterprises, including Google, Samsung, Lego, and Airbnb.</p>
+  <div class="cases"><div class="kicker">Proven in entertainment</div><div class="case-row"><div class="case"><div class="cbrand">Lionsgate</div><div class="big">36K</div><div class="small">clicked to book tickets from a 3D trailer</div></div><div class="case"><div class="cbrand">Netflix</div><div class="big">45%</div><div class="small">of viewers went on to visit Netflix</div></div><div class="case"><div class="cbrand">Wargaming</div><div class="big">63%</div><div class="small">lift in paid media ROI</div></div></div></div>
 </div>
-<div class="right"><div class="tiles"><button class="tile" data-go="1"><span class="orb flicks"></span><span class="tname">Flicks</span><span class="ttag">Interactive video ads</span><span class="arrow">→</span></button><button class="tile" data-go="2"><span class="orb airboards"></span><span class="tname">Airboards</span><span class="ttag">Interactive 3D on any screen</span><span class="arrow">→</span></button><button class="tile" data-go="3"><span class="orb visual"></span><span class="tname">AI Visual Agents</span><span class="ttag">Real-time, face to face</span><span class="arrow">→</span></button><button class="tile" data-go="4"><span class="orb voice"></span><span class="tname">AI Voice Agents</span><span class="ttag">60+ languages, by phone and app</span><span class="arrow">→</span></button></div></div>
-</section><section class="slide product" data-i="1">
-<div class="left">
-  <div class="plabel"><span class="orb flicks"></span><div><div class="pname">Flicks</div><div class="ptag">Interactive video ads</div></div></div>
-  <h2 class="grad">A trailer for every fan.</h2>
-  <ol class="points"><li><span class="n">01</span><div><div class="pt">Every fan picks their angle</div><div class="pd">Tap a character, a scene or a tone and the trailer switches in the same frame.</div></div></li><li><span class="n">02</span><div><div class="pt">Know which angle is selling</div><div class="pd">See which character or tone pulls with which audience while the campaign is live.</div></div></li><li><span class="n">03</span><div><div class="pt">Bring in new audiences</div><div class="pd">Fans of one character or one genre find their own way into the title.</div></div></li><li><span class="n">04</span><div><div class="pt">Slates, launches and partners</div><div class="pd">Switch between shows on a slate, characters in a game, or the product in a scene.</div></div></li><li><span class="n">05</span><div><div class="pt">Ends in the ticket</div><div class="pd">Every Flick ends in showtimes, a watch button or a pre-order.</div></div></li></ol>
-  <div class="hood"><span>Under the hood</span>Patented compression puts every variant in one ad · switches in about 10 ms · ships as HTML5, VAST or SIMID tags</div>
+<div class="right"><div class="tiles"><button class="tile" data-go="2"><span class="orb flicks"></span><span class="tname">Flicks</span><span class="arrow">→</span></button><button class="tile" data-go="3"><span class="orb airboards"></span><span class="tname">Airboards</span><span class="arrow">→</span></button><button class="tile" data-go="4"><span class="orb visual"></span><span class="tname">AI Visual Agents</span><span class="arrow">→</span></button><button class="tile" data-go="5"><span class="orb voice"></span><span class="tname">AI Voice Agents</span><span class="arrow">→</span></button></div></div>
+</section><section class="slide value" data-i="1">
+<div class="full">
+  <h2 class="grad">Viewers choose, brands learn, both build connections</h2>
+  <div class="kicker">Performance benchmarks</div>
+  <div class="bench"><div class="bm"><div class="bn">18%<span>ITR</span></div><div class="bd">interactions over impressions</div></div><div class="bm"><div class="bn">28%<span>Lower CPA</span></div><div class="bd">high intent buyers land on website</div></div><div class="bm"><div class="bn">3x<span>Dwell time</span></div><div class="bd">against video ads</div></div><div class="bm"><div class="bn">4.2x<span>ROAS</span></div><div class="bd">compared to display banner ads</div></div><div class="bm"><div class="bn">70%<span>Recall</span></div><div class="bd">higher brand recall than passive ads</div></div></div>
+  <div class="vcards"><div class="vc"><div class="vt">Every tap is an insight</div><div class="vd">Real performance data, no guesswork anymore</div></div><div class="vc"><div class="vt">Retarget with precision</div><div class="vd">Choice, Rate, Depth and Speed of interactions build real-time intent signal</div></div><div class="vc"><div class="vt">Distribute anywhere</div><div class="vd">Distribute Flicks across any HTML5/VAST compatible surface seamlessly</div></div></div>
 </div>
-<div class="right"><div class="frame square"><iframe data-src="https://flicks.flamapp.live/sw3qsk/?embed=1" title="Live Flick" allow="autoplay; fullscreen" loading="lazy"></iframe>
-<div class="live-tag"><span class="dot"></span>Live</div></div>
-<div class="demo-cap">Paramount+ · tap to switch what the family watches</div>
-<a class="try" href="https://flicks.flamapp.live/sw3qsk/" target="_blank" rel="noopener">Open full screen ↗</a></div>
 </section><section class="slide product" data-i="2">
 <div class="left">
-  <div class="plabel"><span class="orb airboards"></span><div><div class="pname">Airboards</div><div class="ptag">Interactive 3D on any screen</div></div></div>
-  <h2 class="grad">Bring the world of the title to every fan&#x27;s phone.</h2>
-  <ol class="points"><li><span class="n">01</span><div><div class="pt">Fan events for every fan</div><div class="pd">Sets, vehicles, creatures and costumes in 3D, opened from a poster, a post or a billboard.</div></div></li><li><span class="n">02</span><div><div class="pt">Cinema lobbies</div><div class="pd">Moviegoers explore the film on lobby screens and step up to premium showings.</div></div></li><li><span class="n">03</span><div><div class="pt">Premieres and outdoor</div><div class="pd">Wallscapes and billboards open into the world of the title with one scan.</div></div></li><li><span class="n">04</span><div><div class="pt">Merch and collectibles</div><div class="pd">Toys and merchandise in 3D, explored and bought in the same moment.</div></div></li><li><span class="n">05</span><div><div class="pt">Proven on release</div><div class="pd">Lionsgate&#x27;s 3D trailer drove 370K sessions and 36K clicks to book tickets.</div></div></li></ol>
-  <div class="hood"><span>Under the hood</span>Touch, voice and haptics · runs in the browser · live in about three weeks from assets</div>
+  <div class="plabel"><span class="orb flicks"></span><div class="pname">Flicks</div></div>
+  <h2 class="grad">Zero-latency interactive videos: viewers tap and explore variants inside the same frame</h2>
+  <div class="kicker">What it unlocks for entertainment</div>
+  <ol class="unlocks"><li><span class="n">01</span>Every fan picks the character, scene or tone</li><li><span class="n">02</span>Learn which angle sells while the campaign is live</li><li><span class="n">03</span>Every Flick ends in tickets, a watch button or merch</li></ol>
+  <div class="kicker">Under the hood</div>
+  <div class="tech"><div class="tc"><div class="tt">Compression</div><div class="td">Variants are compressed in a 8-10x smaller file size ensuring the content always loads</div></div><div class="tc"><div class="tt">Compatibility</div><div class="td">Compatible across any HTML placement, no impact on page load times</div></div><div class="tc"><div class="tt">Creation</div><div class="td">Brand-safe content in minutes from a text prompt and human guidance</div></div></div>
+</div>
+<div class="right"><div class="tabs"><button class="tab on" data-src="https://flicks.flamapp.live/s/6aeb1dc5a27f1f11182e4573">Movie · How to Rob a Bank</button><button class="tab" data-src="https://flicks.flamapp.live/s/6afcbb3f3639d601cf02e41e">Movie · Guarding Every Street</button><button class="tab" data-src="https://flicks.flamapp.live/s/6afcd6c5067c677a06bc2243">Movie · Hope Rises From The Dust</button><button class="tab" data-src="https://flicks.flamapp.live/s/6afcd951067c677a06bc22c4">Merch · Built Different</button></div>
+<div class="frame square"><iframe class="flick" data-src="https://flicks.flamapp.live/s/6aeb1dc5a27f1f11182e4573" title="Live Flick" allow="autoplay; fullscreen"></iframe><div class="live-tag"><span class="dot"></span>Live</div></div>
+<div class="demo-cap">Tap to switch the character, the scene or the product</div>
+<a class="try flick-open" href="https://flicks.flamapp.live/s/6aeb1dc5a27f1f11182e4573" target="_blank" rel="noopener">Open full screen ↗</a></div>
+</section><section class="slide product" data-i="3">
+<div class="left">
+  <div class="plabel"><span class="orb airboards"></span><div class="pname">Airboards</div></div>
+  <h2 class="grad">Interactive 3D with touch, voice and haptics, delivered instantly on the user&#x27;s device</h2>
+  <div class="kicker">What it unlocks for entertainment</div>
+  <ol class="unlocks"><li><span class="n">01</span>Fan events on every fan&#x27;s phone</li><li><span class="n">02</span>Lobbies, premieres and OOH that open with one scan</li><li><span class="n">03</span>Merch and collectibles in 3D, bought in the same moment</li></ol>
+  <div class="kicker">Under the hood</div>
+  <div class="tech"><div class="tc"><div class="tt">Instant</div><div class="td">Opens in the browser, no app download</div></div><div class="tc"><div class="tt">Touch, voice and haptics</div><div class="td">High-fidelity 3D the viewer can explore</div></div><div class="tc"><div class="tt">Any channel</div><div class="td">Digital, social, CTV, retail, packaging, print and OOH</div></div></div>
 </div>
 <div class="right"><div class="frame qr-card"><div class="qr"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 198 198" class="segno"><g transform="scale(6)"><path fill="#f6e3da" d="M0 0h33v33h-33z"/><path class="qrline" stroke="#110d0c" d="M2 2.5h7m4 0h2m2 0h1m2 0h3m1 0h7m-29 1h1m5 0h1m1 0h2m2 0h1m2 0h1m2 0h1m1 0h1m1 0h1m5 0h1m-29 1h1m1 0h3m1 0h1m1 0h1m2 0h1m1 0h2m7 0h1m1 0h3m1 0h1m-29 1h1m1 0h3m1 0h1m4 0h1m3 0h3m4 0h1m1 0h3m1 0h1m-29 1h1m1 0h3m1 0h1m3 0h4m1 0h1m1 0h1m1 0h1m2 0h1m1 0h3m1 0h1m-29 1h1m5 0h1m4 0h2m1 0h6m2 0h1m5 0h1m-29 1h7m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h7m-15 1h2m1 0h1m1 0h1m-19 1h3m1 0h2m2 0h2m2 0h2m2 0h2m1 0h1m5 0h2m-28 1h1m1 0h1m1 0h1m2 0h2m2 0h1m1 0h1m2 0h11m1 0h1m-27 1h1m2 0h2m1 0h1m1 0h4m2 0h3m3 0h1m1 0h1m2 0h1m-27 1h2m1 0h1m2 0h1m1 0h1m1 0h1m2 0h2m3 0h2m2 0h2m3 0h1m-25 1h3m2 0h1m1 0h3m3 0h1m1 0h1m1 0h1m1 0h1m2 0h3m-29 1h4m3 0h1m2 0h1m3 0h2m1 0h1m1 0h2m1 0h2m1 0h2m1 0h1m-29 1h2m1 0h1m2 0h2m1 0h2m2 0h2m2 0h9m2 0h1m-28 1h3m1 0h1m12 0h2m4 0h2m1 0h1m-27 1h1m1 0h1m1 0h4m2 0h5m2 0h1m4 0h3m-25 1h3m3 0h4m1 0h1m1 0h1m1 0h1m1 0h1m2 0h1m3 0h1m-26 1h1m1 0h3m1 0h4m1 0h3m1 0h2m1 0h1m1 0h1m1 0h5m-23 1h1m2 0h1m1 0h1m1 0h1m1 0h3m1 0h3m1 0h2m1 0h3m-26 1h4m1 0h3m4 0h1m3 0h2m1 0h7m1 0h1m-21 1h1m2 0h3m2 0h1m1 0h1m1 0h1m3 0h2m2 0h1m-29 1h7m2 0h4m1 0h1m1 0h2m1 0h2m1 0h1m1 0h1m1 0h2m-28 1h1m5 0h1m1 0h1m1 0h2m1 0h2m1 0h1m1 0h1m1 0h1m3 0h1m3 0h1m-29 1h1m1 0h3m1 0h1m3 0h2m1 0h6m1 0h8m-28 1h1m1 0h3m1 0h1m1 0h1m2 0h2m1 0h2m2 0h2m4 0h2m2 0h1m-29 1h1m1 0h3m1 0h1m1 0h2m1 0h1m6 0h1m1 0h1m2 0h1m2 0h1m1 0h1m-29 1h1m5 0h1m1 0h2m2 0h2m2 0h1m3 0h1m1 0h1m1 0h2m1 0h1m-28 1h7m11 0h6m3 0h1"/></g></svg>
 </div>
-<div class="qr-note">Point your phone camera at the code. The 3D opens in your browser, no app needed.</div>
-<div class="live-tag"><span class="dot"></span>Live</div></div>
-<div class="demo-cap">Now You See Me · scan with your phone camera</div>
-<a class="try" href="https://c.flamapp.com/e?o=rffq73" target="_blank" rel="noopener">Open on this device ↗</a><a class="try ghost" href="https://c.flamapp.com/e?o=w9yjm2" target="_blank" rel="noopener">Also try: a family film character unboxing ↗</a></div>
-</section><section class="slide product" data-i="3">
-<div class="left">
-  <div class="plabel"><span class="orb visual"></span><div><div class="pname">AI Visual Agents</div><div class="ptag">Real-time, face to face</div></div></div>
-  <h2 class="grad">A host for every fan, at every hour.</h2>
-  <ol class="points"><li><span class="n">01</span><div><div class="pt">A ticketing concierge</div><div class="pd">Recommends a showtime, finds premium seats and books them in the conversation.</div></div></li><li><span class="n">02</span><div><div class="pt">A guide inside the streaming app</div><div class="pd">Helps subscribers find what to watch next and answers plan questions.</div></div></li><li><span class="n">03</span><div><div class="pt">Characters fans can talk to</div><div class="pd">Stays in character and remembers what each fan explored, built with the rights holder&#x27;s and talent&#x27;s consent.</div></div></li><li><span class="n">04</span><div><div class="pt">Parks, venues and live events</div><div class="pd">Wayfinding, schedules and tickets in the guest&#x27;s own language.</div></div></li><li><span class="n">05</span><div><div class="pt">Works inside your systems</div><div class="pd">Pulls live availability and completes bookings without leaving the conversation.</div></div></li></ol>
-  <div class="hood"><span>Under the hood</span>Lifelike host from a single photo · replies in under 800 ms · 98% answer faithfulness</div>
-</div>
-<div class="right"><div class="frame wide agent"><iframe data-agent="https://flamflix-demo.vercel.app/?avatar_id=ecfb2ddb-80ec-4526-88a7-299a4738957c&amp;agent_id=agent_5801kpzkcb1nfmt9tx0qxpsg6t1x&amp;name=Alex" title="Live AI Visual Agent" allow="microphone; camera; autoplay; fullscreen"></iframe>
-<button class="agent-start" type="button"><span class="mic">●</span> Start the conversation</button>
-<div class="live-tag"><span class="dot"></span>Live</div></div>
-<div class="demo-cap">Talk to Alex · allow your microphone</div>
-<a class="try" href="https://flamflix-demo.vercel.app/?avatar_id=ecfb2ddb-80ec-4526-88a7-299a4738957c&amp;agent_id=agent_5801kpzkcb1nfmt9tx0qxpsg6t1x&amp;name=Alex" target="_blank" rel="noopener">Open in a new tab ↗</a></div>
+<div class="qr-note">Point your phone camera at the code. It opens in your browser, no app needed.</div><div class="live-tag"><span class="dot"></span>Live</div></div>
+<div class="demo-cap">Lionsgate, Now You See Me · scan with your phone camera</div>
+<div class="row"><a class="try" href="https://c.flamapp.com/e?o=rffq73" target="_blank" rel="noopener">Open on this device ↗</a>
+<a class="try ghost" href="https://c.flamapp.com/e?o=w9yjm2" target="_blank" rel="noopener">Also try: family film character unboxing ↗</a></div></div>
 </section><section class="slide product" data-i="4">
 <div class="left">
-  <div class="plabel"><span class="orb voice"></span><div><div class="pname">AI Voice Agents</div><div class="ptag">60+ languages, by phone and app</div></div></div>
-  <h2 class="grad">Every market, every fan, in their own language.</h2>
-  <ol class="points"><li><span class="n">01</span><div><div class="pt">Every market on day one</div><div class="pd">Promo spots and voiceovers in 60+ languages, released together.</div></div></li><li><span class="n">02</span><div><div class="pt">One voice everywhere</div><div class="pd">The same voice across English, Hindi, Spanish and more, used only with the talent&#x27;s consent.</div></div></li><li><span class="n">03</span><div><div class="pt">Fan and ticket lines</div><div class="pd">Showtimes, bookings and premieres by phone, with no hold time.</div></div></li><li><span class="n">04</span><div><div class="pt">Subscriber service</div><div class="pd">Billing, plan and account questions answered by voice at any hour.</div></div></li><li><span class="n">05</span><div><div class="pt">Long-form narration</div><div class="pd">Recaps, audiobooks and podcasts, up to 10,000 characters in one go.</div></div></li></ol>
-  <div class="hood"><span>Under the hood</span>Voice built from 30 seconds of audio · audio starts before the sentence ends · one voice across every language</div>
+  <div class="plabel"><span class="orb visual"></span><div class="pname">AI Visual Agents</div></div>
+  <h2 class="grad">Photo-real avatars that converse in real time and complete actions with context</h2>
+  <div class="kicker">What it unlocks for entertainment</div>
+  <ol class="unlocks"><li><span class="n">01</span>A ticketing concierge that books premium seats</li><li><span class="n">02</span>A guide inside the streaming app</li><li><span class="n">03</span>Characters fans can talk to, built with talent consent</li></ol>
+  <div class="kicker">Under the hood</div>
+  <div class="tech"><div class="tc"><div class="tt">One photo</div><div class="td">Lifelike agent from a single image, exact lip-sync</div></div><div class="tc"><div class="tt">Under 800ms</div><div class="td">Real-time replies, 98% answer faithfulness</div></div><div class="tc"><div class="tt">Takes action</div><div class="td">Connects to Salesforce, HubSpot, Zendesk and calendars</div></div></div>
+</div>
+<div class="right"><div class="frame wide agent"><iframe data-agent="https://flamflix-demo.vercel.app/?avatar_id=ecfb2ddb-80ec-4526-88a7-299a4738957c&amp;agent_id=agent_5801kpzkcb1nfmt9tx0qxpsg6t1x&amp;name=Alex" title="Live AI Visual Agent" allow="microphone; camera; autoplay; fullscreen"></iframe>
+<button class="agent-start" type="button"><span class="mic">●</span> Start the conversation</button><div class="live-tag"><span class="dot"></span>Live</div></div>
+<div class="demo-cap">Talk to Alex · allow your microphone</div>
+<a class="try" href="https://flamflix-demo.vercel.app/?avatar_id=ecfb2ddb-80ec-4526-88a7-299a4738957c&amp;agent_id=agent_5801kpzkcb1nfmt9tx0qxpsg6t1x&amp;name=Alex" target="_blank" rel="noopener">Open in a new tab ↗</a></div>
+</section><section class="slide product" data-i="5">
+<div class="left">
+  <div class="plabel"><span class="orb voice"></span><div class="pname">AI Voice Agents</div></div>
+  <h2 class="grad">Natural phone and voice agents that answer and call in 60+ languages</h2>
+  <div class="kicker">What it unlocks for entertainment</div>
+  <ol class="unlocks"><li><span class="n">01</span>Every market&#x27;s language on day one</li><li><span class="n">02</span>Fan and ticket lines with no hold time</li><li><span class="n">03</span>Subscriber service at any hour</li></ol>
+  <div class="kicker">Under the hood</div>
+  <div class="tech"><div class="tc"><div class="tt">60+ languages</div><div class="td">Switch language mid-conversation</div></div><div class="tc"><div class="tt">Under 300ms</div><div class="td">Natural, real-time speech</div></div><div class="tc"><div class="tt">30 seconds</div><div class="td">Of audio to clone a voice across every language</div></div></div>
 </div>
 <div class="right"><a class="frame voice-card" href="https://flamapp.ai/models/finesse" target="_blank" rel="noopener">
-<div class="wave"><i style="--h:30"></i><i style="--h:55"></i><i style="--h:80"></i><i style="--h:45"></i><i style="--h:95"></i><i style="--h:60"></i><i style="--h:35"></i><i style="--h:70"></i><i style="--h:90"></i><i style="--h:50"></i><i style="--h:25"></i><i style="--h:65"></i><i style="--h:85"></i><i style="--h:40"></i><i style="--h:75"></i><i style="--h:55"></i><i style="--h:30"></i><i style="--h:60"></i></div>
-<div class="voice-title">Listen in 60+ languages</div>
-<div class="chips"><span class="chip">English</span><span class="chip">Español</span><span class="chip">हिन्दी</span><span class="chip">العربية</span><span class="chip">日本語</span><span class="chip">Français</span><span class="chip">Deutsch</span><span class="chip">Português</span><span class="chip">中文</span><span class="chip">한국어</span><span class="chip">Bahasa</span><span class="chip">தமிழ்</span><span class="chip more">+48</span></div>
-<div class="play">▶ Play samples</div>
-<div class="live-tag"><span class="dot"></span>Live</div></a>
-<div class="demo-cap">Hear Flam&#x27;s voice model in 60+ languages</div>
+<div class="wave"><i style="--h:30"></i><i style="--h:55"></i><i style="--h:80"></i><i style="--h:45"></i><i style="--h:95"></i><i style="--h:60"></i><i style="--h:35"></i><i style="--h:70"></i><i style="--h:90"></i><i style="--h:50"></i><i style="--h:25"></i><i style="--h:65"></i><i style="--h:85"></i><i style="--h:40"></i><i style="--h:75"></i><i style="--h:55"></i><i style="--h:30"></i><i style="--h:60"></i></div><div class="voice-title">Listen in 60+ languages</div>
+<div class="chips"><span class="chip">English</span><span class="chip">Español</span><span class="chip">हिन्दी</span><span class="chip">العربية</span><span class="chip">日本語</span><span class="chip">Français</span><span class="chip">Deutsch</span><span class="chip">Português</span><span class="chip">中文</span><span class="chip">한국어</span><span class="chip">Bahasa</span><span class="chip">தமிழ்</span><span class="chip more">+48</span></div><div class="play">▶ Play samples</div><div class="live-tag"><span class="dot"></span>Live</div></a>
+<div class="demo-cap">Hear Flam's voice model across languages</div>
 <a class="try" href="https://flamapp.ai/models/finesse" target="_blank" rel="noopener">Open the voice demo ↗</a></div>
 </section></main>
-<footer><div class="dots"><button class="d" data-go="0" aria-label="Slide 1"></button><button class="d" data-go="1" aria-label="Slide 2"></button><button class="d" data-go="2" aria-label="Slide 3"></button><button class="d" data-go="3" aria-label="Slide 4"></button><button class="d" data-go="4" aria-label="Slide 5"></button></div><div class="nav"><button id="prev" class="navb" aria-label="Previous">‹</button><button id="next" class="navb primary" aria-label="Next">›</button></div></footer>
+<footer><div class="dots"><button class="d" data-go="0" aria-label="Slide 1"></button><button class="d" data-go="1" aria-label="Slide 2"></button><button class="d" data-go="2" aria-label="Slide 3"></button><button class="d" data-go="3" aria-label="Slide 4"></button><button class="d" data-go="4" aria-label="Slide 5"></button><button class="d" data-go="5" aria-label="Slide 6"></button></div><div class="nav"><button id="prev" class="navb" aria-label="Previous">‹</button><button id="next" class="navb primary" aria-label="Next">›</button></div></footer>
 <script>(function(){
   var slides=[].slice.call(document.querySelectorAll('.slide'));
   var dots=[].slice.call(document.querySelectorAll('.d'));
@@ -213,6 +250,12 @@ footer{position:fixed;bottom:0;left:0;right:0;display:flex;justify-content:space
     var fr=b.parentNode, f=fr.querySelector('iframe');
     if(!f.src){f.src=f.getAttribute('data-agent')}
     fr.classList.add('started');
+  })});
+  document.querySelectorAll('.tabs').forEach(function(t){t.addEventListener('click',function(ev){
+    var b=ev.target.closest('.tab'); if(!b)return;
+    t.querySelectorAll('.tab').forEach(function(x){x.classList.toggle('on',x===b)});
+    var r=t.parentNode, f=r.querySelector('iframe.flick'), a=r.querySelector('.flick-open');
+    f.setAttribute('data-src',b.getAttribute('data-src')); f.src=b.getAttribute('data-src'); if(a)a.href=b.getAttribute('data-src');
   })});
   document.getElementById('fs').onclick=function(){
     try{if(!document.fullscreenElement){document.documentElement.requestFullscreen()}else{document.exitFullscreen()}}catch(e){}
