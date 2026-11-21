@@ -353,6 +353,19 @@ footer{background:linear-gradient(transparent,rgba(15,15,15,.85) 60%)}
   var dots=[].slice.call(document.querySelectorAll('.d'));
   var cur=0, n=slides.length;
   function pad(x){return (x<10?'0':'')+x}
+  // Replace an iframe with a fresh element: the only reliable way to stop cross-origin audio.
+  function swap(f,src){
+    var nf=f.cloneNode(false); nf.removeAttribute('src');
+    if(src){nf.setAttribute('data-src',src); nf.src=src}
+    f.parentNode.replaceChild(nf,f); return nf;
+  }
+  function unloadIn(root){
+    root.querySelectorAll('iframe').forEach(function(f){if(f.getAttribute('src'))swap(f,null)});
+    root.querySelectorAll('.agent.started').forEach(function(a){a.classList.remove('started')});
+  }
+  function loadIn(root){
+    root.querySelectorAll('iframe[data-src]').forEach(function(f){if(!f.getAttribute('src')){f.src=f.getAttribute('data-src')}});
+  }
   function show(i,push){
     i=Math.max(0,Math.min(n-1,i)); cur=i;
     slides.forEach(function(s,k){s.classList.toggle('on',k===i);s.classList.toggle('past',k<i)});
@@ -360,7 +373,8 @@ footer{background:linear-gradient(transparent,rgba(15,15,15,.85) 60%)}
     document.getElementById('cur').textContent=pad(i+1);
     document.getElementById('prev').disabled=i===0;
     document.getElementById('next').disabled=i===n-1;
-    slides[i].querySelectorAll('iframe[data-src]').forEach(function(f){if(!f.src){f.src=f.getAttribute('data-src')}});
+    slides.forEach(function(s,k){if(k!==i)unloadIn(s)});
+    if(!document.hidden)loadIn(slides[i]);
     slides[i].querySelectorAll('.call-card').forEach(function(c){c.querySelectorAll('.conv.on .b').forEach(function(b){b.style.animation='none';b.offsetHeight;b.style.animation=''})});
     if(push!==false){try{history.replaceState(null,'','#'+(i+1))}catch(e){}}
   }
@@ -376,20 +390,20 @@ footer{background:linear-gradient(transparent,rgba(15,15,15,.85) 60%)}
   document.addEventListener('touchend',function(e){if(x0===null)return;var dx=e.changedTouches[0].clientX-x0;if(Math.abs(dx)>60){show(cur+(dx<0?1:-1))}x0=null},{passive:true});
   document.querySelectorAll('.agent-start').forEach(function(b){b.addEventListener('click',function(){
     var fr=b.parentNode, f=fr.querySelector('iframe');
-    if(!f.src){f.src=f.getAttribute('data-agent')}
+    if(!f.getAttribute('src')){f.src=f.getAttribute('data-agent')}
     fr.classList.add('started');
   })});
   document.querySelectorAll('.tabs').forEach(function(t){t.addEventListener('click',function(ev){
     var b=ev.target.closest('.tab'); if(!b)return;
     t.querySelectorAll('.tab').forEach(function(x){x.classList.toggle('on',x===b)});
     var r=t.parentNode, f=r.querySelector('iframe.flick'), a=r.querySelector('.flick-open'); if(!f)return;
-    f.setAttribute('data-src',b.getAttribute('data-src')); f.src=b.getAttribute('data-src'); if(a)a.href=b.getAttribute('data-src');
+    swap(f,b.getAttribute('data-src')); if(a)a.href=b.getAttribute('data-src');
   })});
   document.querySelectorAll('.ab-wrap').forEach(function(w){w.addEventListener('click',function(ev){
     var b=ev.target.closest('.ab-item'); if(!b)return;
     w.querySelectorAll('.ab-item').forEach(function(x){x.classList.toggle('on',x===b)});
     w.querySelectorAll('.ab-qr').forEach(function(x){x.classList.toggle('on',x.getAttribute('data-k')===b.getAttribute('data-k'))});
-    var f=w.querySelector('iframe.ab-vid'); f.setAttribute('data-src',b.getAttribute('data-src')); f.src=b.getAttribute('data-src');
+    swap(w.querySelector('iframe.ab-vid'),b.getAttribute('data-src'));
   })});
   function replay(w){w.querySelectorAll('.conv.on .b').forEach(function(b){b.style.animation='none';b.offsetHeight;b.style.animation=''})}
   document.querySelectorAll('.calls-tabs').forEach(function(t){t.addEventListener('click',function(ev){
@@ -400,6 +414,10 @@ footer{background:linear-gradient(transparent,rgba(15,15,15,.85) 60%)}
     replay(card);
   },true)});
 
+  // Browser tab hidden: stop everything. Back: reload the current slide's media.
+  document.addEventListener('visibilitychange',function(){
+    if(document.hidden){slides.forEach(unloadIn)}else{loadIn(slides[cur])}
+  });
   function fromHash(){var h=parseInt((location.hash||'#1').slice(1),10);show(isNaN(h)?0:h-1,false)}
   window.addEventListener('hashchange',fromHash);
   fromHash();
