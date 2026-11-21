@@ -178,6 +178,26 @@ footer{position:fixed;bottom:0;left:0;right:0;display:flex;justify-content:space
 .ab-qt a{color:var(--acc);margin-top:2px}
 @media (max-height:700px){.ab-item img{height:48px;width:32px}.ab-qr .qr{width:60px}.vcol li{padding:9px 0}.vcol .vt{font-size:16px}}
 @media (max-width:900px){.vcols{grid-template-columns:1fr}.bench{grid-template-columns:repeat(2,1fr)}.ab-wrap{flex-direction:column}.frame.phone{height:auto;width:min(70vw,300px)}.ab-side{width:min(86vw,360px)}}
+/* v4: voice journeys */
+.call-card{width:min(40vw,460px,74vh);height:min(52vh,440px);padding:0;display:flex;flex-direction:column;background:linear-gradient(170deg,#2a1c18,#150f0d)}
+.conv{display:none;flex-direction:column;height:100%}
+.conv.on{display:flex}
+.call-head{display:flex;align-items:center;gap:12px;padding:16px 18px;border-bottom:1px solid var(--line)}
+.call-head .orb{width:38px;height:38px}
+.call-who{display:flex;flex-direction:column;gap:2px;flex:1;min-width:0}
+.call-who b{font-size:15px;font-weight:500}
+.call-who span{font-size:11.5px;color:var(--mute)}
+.call-live{display:flex;align-items:center;gap:8px;font-size:10.5px;letter-spacing:1.6px;text-transform:uppercase;color:var(--acc)}
+.eq{display:flex;align-items:flex-end;gap:2px;height:14px}
+.eq i{width:3px;height:100%;border-radius:2px;background:var(--acc);animation:eq 1s ease-in-out infinite}
+.eq i:nth-child(2){animation-delay:-.3s}.eq i:nth-child(3){animation-delay:-.6s}.eq i:nth-child(4){animation-delay:-.15s}
+@keyframes eq{50%{transform:scaleY(.3)}}
+.bubbles{flex:1;display:flex;flex-direction:column;gap:10px;padding:18px;overflow:hidden;justify-content:flex-end}
+.b{max-width:84%;font-size:14px;line-height:1.45;padding:10px 14px;border-radius:16px;opacity:0;transform:translateY(8px);animation:bin .45s ease forwards;animation-delay:calc(var(--i)*1.7s + .3s)}
+.b.c{align-self:flex-end;background:rgba(246,227,218,.1);border-bottom-right-radius:5px;color:var(--ink)}
+.b.a{align-self:flex-start;background:linear-gradient(95deg,#f8e9e1,#f2c4b3);color:#1d1310;border-bottom-left-radius:5px}
+@keyframes bin{to{opacity:1;transform:none}}
+@media (max-width:900px){.call-card{width:min(90vw,460px);height:440px}}
 </style></head>
 <body>
 <div class="bg"></div>
@@ -234,7 +254,7 @@ footer{position:fixed;bottom:0;left:0;right:0;display:flex;justify-content:space
   <div class="kicker">What it unlocks for entertainment</div>
   <ol class="unlocks"><li><span class="n">01</span>A ticketing concierge that books premium seats</li><li><span class="n">02</span>A guide inside the streaming app</li><li><span class="n">03</span>Characters fans can talk to, built with talent consent</li></ol>
   <div class="kicker">Under the hood</div>
-  <div class="tech"><div class="tc"><div class="tt">One photo</div><div class="td">Lifelike agent from a single image, exact lip-sync</div></div><div class="tc"><div class="tt">Under 800ms</div><div class="td">Real-time replies, 98% answer faithfulness</div></div><div class="tc"><div class="tt">Takes action</div><div class="td">Connects to Salesforce, HubSpot, Zendesk and calendars</div></div></div>
+  <div class="tech"><div class="tc"><div class="tt">One photo</div><div class="td">Lifelike character from a single image, exact lip-sync</div></div><div class="tc"><div class="tt">Under 800ms</div><div class="td">Real-time replies that feel like a conversation</div></div><div class="tc"><div class="tt">Fully grounded</div><div class="td">Answers only from the story, cast and ticketing info the studio provides</div></div></div>
 </div>
 <div class="right"><div class="frame wide agent"><iframe data-agent="https://flamflix-demo.vercel.app/?avatar_id=ecfb2ddb-80ec-4526-88a7-299a4738957c&amp;agent_id=agent_5801kpzkcb1nfmt9tx0qxpsg6t1x&amp;name=Alex" title="Live AI Visual Agent" allow="microphone; camera; autoplay; fullscreen"></iframe>
 <button class="agent-start" type="button"><span class="mic">●</span> Start the conversation</button><div class="live-tag"><span class="dot"></span>Live</div></div>
@@ -243,17 +263,15 @@ footer{position:fixed;bottom:0;left:0;right:0;display:flex;justify-content:space
 </section><section class="slide product" data-i="5">
 <div class="left">
   <div class="plabel"><span class="orb voice"></span><div class="pname">AI Voice Agents</div></div>
-  <h2 class="grad">Natural phone and voice agents that answer and call in 60+ languages</h2>
+  <h2 class="grad">Voice agents that answer, advise and act in real time, in 60+ languages</h2>
   <div class="kicker">What it unlocks for entertainment</div>
-  <ol class="unlocks"><li><span class="n">01</span>Every market&#x27;s language on day one</li><li><span class="n">02</span>Fan and ticket lines with no hold time</li><li><span class="n">03</span>Subscriber service at any hour</li></ol>
+  <ol class="unlocks"><li><span class="n">01</span>Fans call the detective, the safecracker or the crew</li><li><span class="n">02</span>Tickets booked in the same call</li><li><span class="n">03</span>Every market&#x27;s language on day one</li></ol>
   <div class="kicker">Under the hood</div>
-  <div class="tech"><div class="tc"><div class="tt">60+ languages</div><div class="td">Switch language mid-conversation</div></div><div class="tc"><div class="tt">Under 300ms</div><div class="td">Natural, real-time speech</div></div><div class="tc"><div class="tt">30 seconds</div><div class="td">Of audio to clone a voice across every language</div></div></div>
+  <div class="tech"><div class="tc"><div class="tt">Fully grounded</div><div class="td">Stays in character, answers only from what the studio provides</div></div><div class="tc"><div class="tt">Under 300ms</div><div class="td">Natural, real-time speech in 60+ languages</div></div><div class="tc"><div class="tt">30 seconds</div><div class="td">Of audio to clone a voice, with talent consent</div></div></div>
 </div>
-<div class="right"><a class="frame voice-card" href="https://flamapp.ai/models/finesse" target="_blank" rel="noopener">
-<div class="wave"><i style="--h:30"></i><i style="--h:55"></i><i style="--h:80"></i><i style="--h:45"></i><i style="--h:95"></i><i style="--h:60"></i><i style="--h:35"></i><i style="--h:70"></i><i style="--h:90"></i><i style="--h:50"></i><i style="--h:25"></i><i style="--h:65"></i><i style="--h:85"></i><i style="--h:40"></i><i style="--h:75"></i><i style="--h:55"></i><i style="--h:30"></i><i style="--h:60"></i></div><div class="voice-title">Listen in 60+ languages</div>
-<div class="chips"><span class="chip">English</span><span class="chip">Español</span><span class="chip">हिन्दी</span><span class="chip">العربية</span><span class="chip">日本語</span><span class="chip">Français</span><span class="chip">Deutsch</span><span class="chip">Português</span><span class="chip">中文</span><span class="chip">한국어</span><span class="chip">Bahasa</span><span class="chip">தமிழ்</span><span class="chip more">+48</span></div><div class="play">▶ Play samples</div><div class="live-tag"><span class="dot"></span>Live</div></a>
-<div class="demo-cap">Hear Flam's voice model across languages</div>
-<a class="try" href="https://flamapp.ai/models/finesse" target="_blank" rel="noopener">Open the voice demo ↗</a></div>
+<div class="right"><div class="tabs calls-tabs"><button class="tab on" data-k="0">The detective</button><button class="tab" data-k="1">The safecracker</button><button class="tab" data-k="2">Book with the crew</button></div>
+<div class="frame call-card"><div class="conv on" data-k="0"><div class="call-head"><span class="orb voice"></span><div class="call-who"><b>The Detective</b><span>Flam voice agent · Heist thriller</span></div><div class="call-live"><span class="eq"><i></i><i></i><i></i><i></i></span>On call</div></div><div class="bubbles"><div class="b c" style="--i:0">Okay detective, who&#x27;s the inside man?</div><div class="b a" style="--i:1">If I knew that, I wouldn&#x27;t be working Friday night. But I&#x27;d watch the one who never takes off their gloves.</div><div class="b c" style="--i:2">That&#x27;s all I get?</div><div class="b a" style="--i:3">That&#x27;s all anyone gets before opening night. Want me to hold two seats so you can watch me crack it?</div></div></div><div class="conv" data-k="1"><div class="call-head"><span class="orb voice"></span><div class="call-who"><b>The Safecracker</b><span>Flam voice agent · Heist thriller</span></div><div class="call-live"><span class="eq"><i></i><i></i><i></i><i></i></span>On call</div></div><div class="bubbles"><div class="b c" style="--i:0">How do you even open a vault like that?</div><div class="b a" style="--i:1">Patience, a stethoscope, and never the night shift. Ask me again after the third act.</div><div class="b c" style="--i:2">You&#x27;re no help.</div><div class="b a" style="--i:3">I&#x27;m a lot of help, I just don&#x27;t work for free. Watch the trailer, I&#x27;m in the last ten seconds.</div></div></div><div class="conv" data-k="2"><div class="call-head"><span class="orb voice"></span><div class="call-who"><b>The Getaway Driver</b><span>Flam voice agent · Heist thriller</span></div><div class="call-live"><span class="eq"><i></i><i></i><i></i><i></i></span>On call</div></div><div class="bubbles"><div class="b c" style="--i:0">Two tickets for Friday, the late show.</div><div class="b a" style="--i:1">Two for the 10:15 on Friday. Middle row is open, want those?</div><div class="b c" style="--i:2">Perfect.</div><div class="b a" style="--i:3">Booked, they&#x27;re in your texts. And don&#x27;t trust the guy in the gloves.</div></div></div></div>
+<a class="try ghost" href="https://flamapp.ai/models/finesse" target="_blank" rel="noopener">Hear the voice model in 60+ languages ↗</a></div>
 </section></main>
 <footer><div class="dots"><button class="d" data-go="0" aria-label="Slide 1"></button><button class="d" data-go="1" aria-label="Slide 2"></button><button class="d" data-go="2" aria-label="Slide 3"></button><button class="d" data-go="3" aria-label="Slide 4"></button><button class="d" data-go="4" aria-label="Slide 5"></button><button class="d" data-go="5" aria-label="Slide 6"></button></div><div class="nav"><button id="prev" class="navb" aria-label="Previous">‹</button><button id="next" class="navb primary" aria-label="Next">›</button></div></footer>
 <script>(function(){
@@ -269,6 +287,7 @@ footer{position:fixed;bottom:0;left:0;right:0;display:flex;justify-content:space
     document.getElementById('prev').disabled=i===0;
     document.getElementById('next').disabled=i===n-1;
     slides[i].querySelectorAll('iframe[data-src]').forEach(function(f){if(!f.src){f.src=f.getAttribute('data-src')}});
+    slides[i].querySelectorAll('.call-card').forEach(function(c){c.querySelectorAll('.conv.on .b').forEach(function(b){b.style.animation='none';b.offsetHeight;b.style.animation=''})});
     if(push!==false){try{history.replaceState(null,'','#'+(i+1))}catch(e){}}
   }
   document.getElementById('prev').onclick=function(){show(cur-1)};
@@ -289,7 +308,7 @@ footer{position:fixed;bottom:0;left:0;right:0;display:flex;justify-content:space
   document.querySelectorAll('.tabs').forEach(function(t){t.addEventListener('click',function(ev){
     var b=ev.target.closest('.tab'); if(!b)return;
     t.querySelectorAll('.tab').forEach(function(x){x.classList.toggle('on',x===b)});
-    var r=t.parentNode, f=r.querySelector('iframe.flick'), a=r.querySelector('.flick-open');
+    var r=t.parentNode, f=r.querySelector('iframe.flick'), a=r.querySelector('.flick-open'); if(!f)return;
     f.setAttribute('data-src',b.getAttribute('data-src')); f.src=b.getAttribute('data-src'); if(a)a.href=b.getAttribute('data-src');
   })});
   document.querySelectorAll('.ab-wrap').forEach(function(w){w.addEventListener('click',function(ev){
@@ -298,6 +317,14 @@ footer{position:fixed;bottom:0;left:0;right:0;display:flex;justify-content:space
     w.querySelectorAll('.ab-qr').forEach(function(x){x.classList.toggle('on',x.getAttribute('data-k')===b.getAttribute('data-k'))});
     var f=w.querySelector('iframe.ab-vid'); f.setAttribute('data-src',b.getAttribute('data-src')); f.src=b.getAttribute('data-src');
   })});
+  function replay(w){w.querySelectorAll('.conv.on .b').forEach(function(b){b.style.animation='none';b.offsetHeight;b.style.animation=''})}
+  document.querySelectorAll('.calls-tabs').forEach(function(t){t.addEventListener('click',function(ev){
+    var b=ev.target.closest('.tab'); if(!b)return; ev.stopPropagation();
+    t.querySelectorAll('.tab').forEach(function(x){x.classList.toggle('on',x===b)});
+    var card=t.parentNode.querySelector('.call-card');
+    card.querySelectorAll('.conv').forEach(function(c){c.classList.toggle('on',c.getAttribute('data-k')===b.getAttribute('data-k'))});
+    replay(card);
+  },true)});
   document.getElementById('fs').onclick=function(){
     try{if(!document.fullscreenElement){document.documentElement.requestFullscreen()}else{document.exitFullscreen()}}catch(e){}
   };
