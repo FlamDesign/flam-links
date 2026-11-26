@@ -1,0 +1,6 @@
+<!doctype html>
+<meta charset=utf-8>
+<meta name=ad.orientation content=portrait,landscape>
+<script>var ExitApi=window.ExitApi||{exit:function(){}};var clickTag=(function(){try{var s=(location.search||'')+'&'+((location.hash||'').replace(/^#/,''));var m=/[?&]clickTag=([^&]*)/.exec(s);return m?decodeURIComponent(m[1]):'';}catch(e){return '';}})();</script>
+<script>window.AD_CONFIG=window.AD_CONFIG||{};window.AD_CONFIG.dsp="house";window.AD_CONFIG.clickTracker={"mode":"exit","template":""};</script>
+<script src=https://flicks.flamapp.live/vuvvqo/ad.js></script>
